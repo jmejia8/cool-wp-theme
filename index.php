@@ -89,7 +89,7 @@ get_header();
           <strong class="d-inline-block mb-2 text-success">Design</strong>
           <h3 class="mb-0">Post title</h3>
           <div class="mb-1 text-muted">Nov 11</div>
-          <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <p class="mb-auto">This is a wider card content.</p>
           <a href="#" class="stretched-link">Continue reading</a>
         </div>
         <div class="col-auto d-none d-lg-block">
@@ -101,14 +101,14 @@ get_header();
 
   <div class="jumbotron">
     <div class="container">
-      <h1 class="display-3">Hello, world!</h1>
-      <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      <h1 class="display-3"><?php bloginfo('name'); ?></h1>
+      <p> <?php bloginfo('description'); ?> </p>
+      <p><a class="btn btn-primary btn-lg" href="#" role="button">About &raquo;</a></p>
     </div>
   </div>
 
-  <div class="album py-5 bg-dark">
-      <div class="container">
+  <div class="album py-5 ">
+      <!-- <div class="container"> -->
 
         <div class="row">
           <?php
@@ -116,11 +116,16 @@ get_header();
           while (have_posts()) : the_post();
           ?>
           <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-              <?php echo get_the_post_thumbnail($loop->ID, 'cool_blog-tutorial-image');?>
-              <div class="card-body">
+            <div class="card mb-4 border-info shadow-sm">
+              <div style="width: 100%;height: 100%;min-height: 200px;background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'cool_blog-featured-image'); ?>) no-repeat center; background-size: 100% auto;">
+              </div>
+              <div class="card-header">
                 <h4><?php the_title(); ?></h4>
-                <p class="card-text"><?php the_excerpt(); ?></p>
+              </div>
+              <div class="card-body col p-4 d-flex flex-column position-static">
+                <p class="mb-auto">
+                  <?php the_excerpt(); ?>
+                </p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button type="button" onclick="location.href='<?php echo get_permalink(); ?>';" class="btn btn-sm btn-outline-secondary">View</button>
@@ -139,7 +144,7 @@ get_header();
 
 
         </div>
-      </div>
+      <!-- </div> -->
   </div>
 
 
