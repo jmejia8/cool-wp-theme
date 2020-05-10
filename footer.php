@@ -1,6 +1,6 @@
 <footer class="footer mt-auto py-3">
   <div class="container">
-    <span class="text-muted">Place sticky footer content here.</span>
+    <span class="text-muted"> &copy; <?php echo Date('Y')." "; echo  bloginfo('name'); ?></span>
   </div>
   <?php wp_footer(); ?>
 </footer>
