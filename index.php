@@ -4,43 +4,49 @@ get_header();
 ?>
 
 <main role="main">
+  <?php
+  $args = array(
+    'post_type' => 'cool_blog_slider',
+    'posts_per_page' => 3
+  );
+
+  $loop = new WP_Query( $args );
+  if ($loop->have_posts()) :
+
+  ?>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <?php
+      for ($i=0; $i < $loop->found_posts; $i++) {
+        $active = $i == 0 ? "active" : "";
+      ?>
+        <li data-target="#myCarousel" data-slide-to="<?php echo $i ?>" class="<?php echo $active; ?>"></li>
+      <?php
+      }
+      ?>
     </ol>
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
-        <div class="container">
-          <div class="carousel-caption text-left">
-            <h1>Example headline.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>Another example headline.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
-        <div class="container">
-          <div class="carousel-caption text-right">
-            <h1>One more for good measure.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-            <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-          </div>
-        </div>
-      </div>
+      <?php
+
+          for ($i=0; $loop->have_posts(); $i++) {
+              $loop->the_post();
+              $active = $i == 0 ? "active" : "";
+
+        ?>
+            <div class="carousel-item <?php echo $active; ?>">
+              <div style="width: 100%;height: 100%;background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'cool_blog-featured-image'); ?>) no-repeat center; background-size: 100% auto;">
+              </div>
+              <div class="container">
+                <div class="carousel-caption text-left">
+                  <?php the_title( "<h1>", "</h1>" ); ?>
+                  <p><?php the_excerpt(); ?></p>
+                  <p><a class="btn btn-lg btn-primary" href="#" role="button">Go for it!</a></p>
+                </div>
+              </div>
+            </div>
+            <?php
+            }
+            ?>
     </div>
     <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -51,6 +57,9 @@ get_header();
       <span class="sr-only">Next</span>
     </a>
   </div>
+  <?php
+  endif;
+  ?>
 </main>
 
 
