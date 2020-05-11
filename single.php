@@ -61,7 +61,7 @@
 
             ?>
 
-              <div class="row mb-5 mt-5">
+              <div class="row mb-5">
                 <div >
                   <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 border-primary h-md-250 position-relative">
                     <div class="col p-4 d-flex flex-column position-static">

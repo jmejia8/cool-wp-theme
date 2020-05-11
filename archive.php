@@ -14,30 +14,11 @@ get_header();
 
 
 
-    <?php // http://www.example.com/2017/05
-    if (is_date()) { ?>
-    <h1 class="main-h1">
-        <span class="red">
-            <i class="fa fa-calendar"></i>
-            <?php _e('Entries from ', 'cool_blog'); ?>
-        </span>
 
-        <?php
-
-        $year = get_query_var('year');
-        $month = get_query_var('monthnum');
-        $day = get_query_var('day');
-
-        if ($year > 0) { echo $year; }
-        if ($month > 0) { echo '-' . str_pad($month, 2, 0, STR_PAD_LEFT); }
-        if ($day > 0) { echo '-' . str_pad($day, 2, 0, STR_PAD_LEFT); }
-
-    ?></h1>
-    <?php } ?>
 
       		<?php while ( have_posts() ) : the_post(); ?>
 
-      			<div class="row mb-5 mt-5">
+      			<div class="row mb-5">
     					<div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
     						<div class="col p-4 d-flex flex-column position-static">
                   <strong class="d-inline-block mb-2 text-primary">
