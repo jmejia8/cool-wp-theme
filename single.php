@@ -62,10 +62,10 @@
             ?>
 
               <div class="row mb-5 mt-5">
-                <div class="">
-                  <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div >
+                  <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 border-primary h-md-250 position-relative">
                     <div class="col p-4 d-flex flex-column position-static">
-                      <h3 class="mb-3"><?php  the_title(); ?></h3>
+                      <h5 class="mb-3"><?php  the_title(); ?></h5>
                       <p class="card-text mb-auto"><?php the_excerpt(); ?></p>
                       <a href="<?php echo get_permalink(); ?>" class="stretched-link">Continue reading</a>
                     </div>

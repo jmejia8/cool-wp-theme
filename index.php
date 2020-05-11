@@ -116,7 +116,7 @@ get_header();
           while (have_posts()) : the_post();
           ?>
           <div class="col-md-4">
-            <div class="card mb-4 border-info shadow-sm">
+            <div class="card mb-4 border-primary shadow-sm">
               <div style="width: 100%;height: 100%;min-height: 200px;background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'cool_blog-featured-image'); ?>) no-repeat center; background-size: 100% auto;">
               </div>
               <div class="card-header">
