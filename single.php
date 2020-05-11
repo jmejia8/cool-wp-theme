@@ -114,8 +114,6 @@
 		<div class="card mb-3">
 			<div style="width: 100%;height: 100%;min-height: 200px;background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'cool_blog-featured-image'); ?>) no-repeat center; background-size: 100% auto;">
 			</div>
-			<!-- <svg class="bd-placeholder-img card-img-bottom" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg> -->
-		  <!-- <img src="..." class="card-img-top" alt="..."> -->
 		  <div class="card-body">
 		    <h5 class="card-title"><?php the_title(); ?></h5>
 		    <a href="<?php echo get_permalink(); ?>" class="stretched-link">Read</a>

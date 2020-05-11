@@ -25,7 +25,6 @@ get_header();
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<div class="row mb-5 mt-5">
-				<div class="">
 					<div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
 						<div class="col p-4 d-flex flex-column position-static">
 							<h3 class="mb-3"><?php  the_title(); ?></h3>
@@ -36,23 +35,8 @@ get_header();
 							<?php echo get_the_post_thumbnail(get_the_ID(), 'cool_blog-tutorial-image');?>
 						</div>
 					</div>
-				</div>
 			</div>
 
-		<!-- <li class="media">
-			<div class="media-body">
-				<h2>
-				   <a href="<?php esc_url( the_permalink() ); ?>" title="<?php the_title(); ?>" rel="bookmark">
-					   <?php the_title(); ?>
-				   </a>
-				</h2>
-				<time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate>
-					<?php the_date(); ?> <?php the_time(); ?>
-				</time>
-				<?php comments_popup_link(__('Leave a Comment', 'cool_blog'), __('1 Comment', 'cool_blog'), __('% Comments', 'cool_blog')); ?>
-				<?php the_content(); ?>
-			</div>
-		</li> -->
 
 
 		<?php endwhile; ?>
