@@ -32,7 +32,9 @@ get_header();
 							<a href="<?php echo get_permalink(); ?>" class="stretched-link">Continue reading</a>
 						</div>
 						<div class="col-auto d-none d-lg-block">
-							<?php echo get_the_post_thumbnail(get_the_ID(), 'cool_blog-tutorial-image');?>
+							<div style="width: 100%;height: 100%;background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'cool_blog-featured-image'); ?>) no-repeat center top/cover;">
+              </div>
+							<!-- <?php echo get_the_post_thumbnail(get_the_ID(), 'cool_blog-tutorial-image');?> -->
 						</div>
 					</div>
 			</div>

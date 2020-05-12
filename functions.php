@@ -86,9 +86,9 @@ function cool_blogWidgetsInit() {
         'name' => __( 'Posts sidebar', 'cool_blog' ),
         'id' => 'sidebar-posts',
         'description' => __( 'Widgets in this area will be shown on all posts.', 'cool_blog' ),
-        'before_widget' => '<div id="%1$s" class="widget mt-4  card %2$s">',
+        'before_widget' => '<div id="%1$s" class="widget mt-4  card shadow  %2$s">',
 	'before_title'  => '<h5 class="card-header">',
-	'after_title'   => '</h5><div class="mt-4 card-text">',
+	'after_title'   => '</h5><div class="mt-3 card-text">',
   'after_widget'  => '</div></div>',
     ) );
 }

@@ -3,64 +3,6 @@
 get_header();
 ?>
 
-<main role="main">
-  <?php
-  $args = array(
-    'post_type' => 'cool_blog_slider',
-    'posts_per_page' => 3
-  );
-
-  $loop = new WP_Query( $args );
-  if ($loop->have_posts()) :
-
-  ?>
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <?php
-      for ($i=0; $i < $loop->found_posts; $i++) {
-        $active = $i == 0 ? "active" : "";
-      ?>
-        <li data-target="#myCarousel" data-slide-to="<?php echo $i ?>" class="<?php echo $active; ?>"></li>
-      <?php
-      }
-      ?>
-    </ol>
-    <div class="carousel-inner">
-      <?php
-
-          for ($i=0; $loop->have_posts(); $i++) {
-              $loop->the_post();
-              $active = $i == 0 ? "active" : "";
-
-        ?>
-            <div class="carousel-item <?php echo $active; ?>">
-              <div style="width: 100%;height: 100%;background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'cool_blog-featured-image'); ?>) no-repeat center; background-size: 100% auto;">
-              </div>
-              <div class="container">
-                <div class="carousel-caption text-left">
-                  <?php the_title( "<h1>", "</h1>" ); ?>
-                  <p><?php the_excerpt(); ?></p>
-                  <p><a class="btn btn-lg btn-primary" href="#" role="button">Go for it!</a></p>
-                </div>
-              </div>
-            </div>
-            <?php
-            }
-            ?>
-    </div>
-    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-  <?php
-  endif;
-  ?>
-</main>
 
 
 <div class="container">
@@ -116,8 +58,8 @@ get_header();
           while (have_posts()) : the_post();
           ?>
           <div class="col-md-4">
-            <div class="card mb-4 border-primary shadow-sm">
-              <div style="width: 100%;height: 100%;min-height: 200px;background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'cool_blog-featured-image'); ?>) no-repeat center top/cover; ">
+            <div class=" shadow card mb-4 border-secundary shadow-sm">
+              <div style=";width: 100%;height: 100%;min-height: 200px;background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'cool_blog-featured-image'); ?>) no-repeat center top/cover; ">
               </div>
               <div class="card-header">
                 <h4><?php the_title(); ?></h4>
@@ -128,8 +70,15 @@ get_header();
                 </p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button type="button" onclick="location.href='<?php echo get_permalink(); ?>';" class="btn btn-sm btn-outline-secondary">View</button>
-                    <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+                    <a href="<?php echo get_permalink(); ?>" class="stretched-link btn btn-sm btn-outline-secondary">View</a>
+                    <?php
+                      if ( is_user_logged_in() ) :
+                    ?>
+                      <a class="btn btn-sm btn-outline-secondary" href="<?php echo get_edit_post_link(); ?>">Edit</a>
+                    <?php
+
+                      endif;
+                    ?>
                   </div>
                   <small class="text-muted">9 mins</small>
                 </div>

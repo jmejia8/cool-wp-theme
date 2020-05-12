@@ -12,7 +12,9 @@
 
 <div class="row mt-5">
 
-
+	<!-- ======================================================================= -->
+	<!--                                Post Content                             -->
+	<!-- ======================================================================= -->
 
     <div class="blog-post col-sm-8">
             <h1 class="blog-post-title"><?php  the_title(); ?></h1>
@@ -41,8 +43,16 @@
             <?php the_content(); ?>
 
 
-					<!-- <h3>Category</h3> -->
 
+
+
+
+
+
+
+						<!-- ======================================================================= -->
+						<!--                                recomendation                            -->
+						<!-- ======================================================================= -->
           <?php
              // the query
 
@@ -61,9 +71,9 @@
 
             ?>
 
-              <div class="row mb-5">
+              <div class="row mt-3">
                 <div >
-                  <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 border-primary h-md-250 position-relative">
+                  <div class="row no-gutters  shadow rounded overflow-hidden flex-md-row mb-4 border-primary h-md-250 position-relative">
                     <div class="col p-4 d-flex flex-column position-static">
                       <h5 class="mb-3"><?php  the_title(); ?></h5>
                       <p class="card-text mb-auto"><?php the_excerpt(); ?></p>
@@ -87,6 +97,14 @@
 
 
 
+
+
+
+
+					<!-- ======================================================================= -->
+					<!--                                comments                                    -->
+					<!-- ======================================================================= -->
+
       <div class="comment-container">
        <?php
         // If comments are open or we have at least one comment, load up the comment template.
@@ -100,7 +118,17 @@
 <?php
 	endwhile;
 ?>
-  <!-- aside -->
+
+
+
+
+
+
+
+
+<!-- ======================================================================= -->
+<!--                                aside                                    -->
+<!-- ======================================================================= -->
   <div class="col-sm-4">
 		<?php
 		$the_query = new WP_Query( array(
@@ -113,7 +141,7 @@
 				continue;
 			}
 		?>
-		<div class="card mb-3">
+		<div class="card mb-4 shadow">
 			<div style="width: 100%;height: 100%;min-height: 200px;background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'cool_blog-featured-image'); ?>) no-repeat center top/cover; ">
 			</div>
 		  <div class="card-body">

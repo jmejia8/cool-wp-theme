@@ -2,19 +2,26 @@
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
 
-body {
+/* body {
   padding-top: 3rem;
   padding-bottom: 3rem;
   color: #5a5a5a;
-}
+} */
 
+
+/* NAVs
+-------------------------------------------------- */
+
+.main-navigation-blog{
+  position:sticky;top:0;z-index:999;
+}
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
 /* Carousel base class */
 .carousel {
-  margin-bottom: 4rem;
+  /* margin-bottom: 4rem; */
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
