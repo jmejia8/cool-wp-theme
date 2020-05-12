@@ -70,7 +70,9 @@
                       <a href="<?php echo get_permalink(); ?>" class="stretched-link">Continue reading</a>
                     </div>
                     <div class="col-auto d-none d-lg-block">
-                      <?php echo get_the_post_thumbnail($the_query->ID, 'cool_blog-tutorial-image');?>
+											<div style="width: 100%;height: 100%;min-height: 50px;background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'cool_blog-featured-image'); ?>) no-repeat center top/cover; ">
+											</div>
+											<?php echo get_the_post_thumbnail($the_query->ID, 'cool_blog-tutorial-image');?>
                     </div>
                   </div>
                 </div>
@@ -112,7 +114,7 @@
 			}
 		?>
 		<div class="card mb-3">
-			<div style="width: 100%;height: 100%;min-height: 200px;background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'cool_blog-featured-image'); ?>) no-repeat center; background-size: 100% auto;">
+			<div style="width: 100%;height: 100%;min-height: 200px;background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'cool_blog-featured-image'); ?>) no-repeat center top/cover; ">
 			</div>
 		  <div class="card-body">
 		    <h5 class="card-title"><?php the_title(); ?></h5>

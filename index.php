@@ -117,7 +117,7 @@ get_header();
           ?>
           <div class="col-md-4">
             <div class="card mb-4 border-primary shadow-sm">
-              <div style="width: 100%;height: 100%;min-height: 200px;background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'cool_blog-featured-image'); ?>) no-repeat center; background-size: 100% auto;">
+              <div style="width: 100%;height: 100%;min-height: 200px;background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'cool_blog-featured-image'); ?>) no-repeat center top/cover; ">
               </div>
               <div class="card-header">
                 <h4><?php the_title(); ?></h4>

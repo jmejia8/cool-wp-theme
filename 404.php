@@ -3,7 +3,7 @@ get_header(); ?>
 <div class="jumbotron">
 	<div class="container">
 		<h1 class="display-3"><?php echo __('Oops!', 'cool_blog'); ?></h1>
-		<p><?php echo __('Achive not found...', 'cool_blog'); ?></p>
+		<p><?php echo __('Archive not found...', 'cool_blog'); ?></p>
 		<!-- <p><a class="btn btn-primary btn-lg" href="#" role="button"><?php echo __('Explore', 'cool_blog'); ?> &raquo;</a></p> -->
 	</div>
 </div>
