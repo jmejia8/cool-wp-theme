@@ -5,41 +5,67 @@ get_header();
 
 
 
-<div class="container">
+<div class="container mt-4">
 
 
+<?php
 
+//==============================================================================
+//==============================================================================
+//                       Popular posts
+//==============================================================================
+//==============================================================================
+$the_query = new WP_Query( array( 'orderby' => 'comment_count', 'posts_per_page' => 2,) );
+?>
+
+<?php if ( $the_query->have_posts() ) : ?>
 
   <div class="row mb-2">
+
+    <?php while ( $the_query->have_posts() ) :
+      $pp =  $the_query->the_post();
+      if (get_the_ID() == $super_id) {
+        continue;
+      }
+
+    ?>
     <div class="col-md-6">
       <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary">World</strong>
-          <h3 class="mb-0">Featured post</h3>
-          <div class="mb-1 text-muted">Nov 12</div>
-          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="stretched-link">Continue reading</a>
+        <div class="col  p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-success">Popular</strong>
+          <h3 class="mb-0"><?php  the_title(); ?></h3>
+          <div class="mb-1 text-muted"><?php echo get_the_date(); ?></div>
+          <p class="mb-auto"><?php the_excerpt(); ?></p>
+          <a href="<?php echo get_permalink(); ?>" class="stretched-link">Continue reading</a>
         </div>
-        <div class="col-auto d-none d-lg-block">
-          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+        <div class="col d-none d-lg-block">
+          <div style="width: 100%;height: 100%;min-height: 50px;background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'cool_blog-featured-image'); ?>) no-repeat center top/cover; ">
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-md-6">
-      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-success">Design</strong>
-          <h3 class="mb-0">Post title</h3>
-          <div class="mb-1 text-muted">Nov 11</div>
-          <p class="mb-auto">This is a wider card content.</p>
-          <a href="#" class="stretched-link">Continue reading</a>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-        </div>
-      </div>
-    </div>
+
+
+
+    <?php endwhile; ?>
+    <?php wp_reset_postdata(); ?>
   </div>
+
+
+
+
+
+  <?php endif; ?>
+
+  <?php
+  wp_reset_postdata();
+
+  //==============================================================================
+  //==============================================================================
+  //==============================================================================
+  ?>
+
+
 
   <div class="jumbotron">
     <div class="container">
@@ -80,7 +106,9 @@ get_header();
                       endif;
                     ?>
                   </div>
-                  <small class="text-muted">9 mins</small>
+                  <small class="text-muted"><?php
+                    echo human_time_diff( strtotime(get_the_date()), current_time( 'timestamp', 1 ) );
+                  ?></small>
                 </div>
               </div>
             </div>

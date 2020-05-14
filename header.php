@@ -48,7 +48,7 @@
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <?php
-        for ($i=0; $i < $loop->found_posts; $i++) {
+        for ($i=0; !is_single() && !is_single() && $i < $loop->found_posts; $i++) {
           $active = $i == 0 ? "active" : "";
         ?>
           <li data-target="#myCarousel" data-slide-to="<?php echo $i ?>" class="<?php echo $active; ?>"></li>
@@ -59,6 +59,7 @@
       <div class="carousel-inner">
         <?php
 
+          if (!is_single() && !is_page()) :
             for ($i=0; $loop->have_posts(); $i++) {
                 $loop->the_post();
                 $active = $i == 0 ? "active" : "";
@@ -77,8 +78,27 @@
               </div>
               <?php
               }
+              elseif (is_single()) :
+                ?>
+                <div class="carousel-item active">
+                  <div style="position: absolute;width: 100%;height: 100%;background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'cool_blog-featured-image'); ?>) no-repeat center top/cover fixed;">
+                  </div>
+                  <!-- <div class="container">
+                    <div class="carousel-caption text-left">
+                      <?php the_title( "<h1>", "</h1>" ); ?>
+                      <p><?php the_excerpt(); ?></p>
+                      <p><a class="btn btn-lg btn-primary" href="#" role="button">Go for it!</a></p>
+                    </div>
+                  </div> -->
+                </div>
+                <?php
+
+            endif
               ?>
       </div>
+      <?php
+      if (!is_single()) :
+      ?>
       <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
@@ -87,6 +107,9 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
+      <?php
+      endif;
+      ?>
     </div>
     <?php
     endif;
