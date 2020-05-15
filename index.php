@@ -20,7 +20,7 @@ $the_query = new WP_Query( array( 'orderby' => 'comment_count', 'posts_per_page'
 
 <?php if ( $the_query->have_posts() ) : ?>
 
-  <div class="row mb-2">
+  <div class="row mb-5">
 
     <?php while ( $the_query->have_posts() ) :
       $pp =  $the_query->the_post();
@@ -30,12 +30,12 @@ $the_query = new WP_Query( array( 'orderby' => 'comment_count', 'posts_per_page'
 
     ?>
     <div class="col-md-6">
-      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="row h-100 no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col  p-4 d-flex flex-column position-static">
           <strong class="d-inline-block mb-2 text-success">Popular</strong>
           <h3 class="mb-0"><?php  the_title(); ?></h3>
           <div class="mb-1 text-muted"><?php echo get_the_date(); ?></div>
-          <p class="mb-auto"><?php the_excerpt(); ?></p>
+          <p class="mb-auto"><?php  echo wp_strip_all_tags( get_the_excerpt(), true ); ?></p>
           <a href="<?php echo get_permalink(); ?>" class="stretched-link">Continue reading</a>
         </div>
         <div class="col d-none d-lg-block">
@@ -83,18 +83,20 @@ $the_query = new WP_Query( array( 'orderby' => 'comment_count', 'posts_per_page'
           // start loop
           while (have_posts()) : the_post();
           ?>
-          <div class="col-md-4">
-            <div class=" shadow card mb-4 border-secundary shadow-sm">
-              <div style=";width: 100%;height: 100%;min-height: 200px;background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'cool_blog-featured-image'); ?>) no-repeat center top/cover; ">
+          <div class="col-md-4  post-card  mb-4">
+            <div class="h-100 shadow card mb-4  border-secundary shadow-sm">
+              <div class="mh-50">
+                <div style=";width: 100%;height: 100%;min-height: 200px;background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'cool_blog-featured-image'); ?>) no-repeat center top/cover; ">
+                </div>
               </div>
               <div class="card-header">
                 <h4><?php the_title(); ?></h4>
               </div>
               <div class="card-body col p-4 d-flex flex-column position-static">
                 <p class="mb-auto">
-                  <?php the_excerpt(); ?>
+                  <?php  echo wp_strip_all_tags( get_the_excerpt(), true ); ?>
                 </p>
-                <div class="d-flex justify-content-between align-items-center">
+                <div class="mt-3 d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <a href="<?php echo get_permalink(); ?>" class="stretched-link btn btn-sm btn-outline-secondary">View</a>
                     <?php

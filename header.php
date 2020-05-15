@@ -7,7 +7,7 @@
   <title><?php is_front_page() ? bloginfo('description') : wp_title(''); ?> | <?php bloginfo('name'); ?></title>
 
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
-  <link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css" crossorigin="anonymous">
 
   <link rel="stylesheet" href="<?php bloginfo('stylesheet_url')?>">
 
@@ -71,7 +71,7 @@
                 <div class="container">
                   <div class="carousel-caption text-left">
                     <?php the_title( "<h1>", "</h1>" ); ?>
-                    <p><?php the_excerpt(); ?></p>
+                    <?php the_excerpt(); ?>
                     <p><a class="btn btn-lg btn-primary" href="#" role="button">Go for it!</a></p>
                   </div>
                 </div>

@@ -24,19 +24,21 @@ get_header();
 		<div class="col-sm-8">
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<div class="row mb-5 mt-5">
-					<div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+			<div class="row mt-3">
+				<div >
+					<div class="row no-gutters  shadow rounded overflow-hidden flex-md-row mb-4 border-primary h-md-250 position-relative">
 						<div class="col p-4 d-flex flex-column position-static">
-							<h3 class="mb-3"><?php  the_title(); ?></h3>
+							<h4 class="mb-3 text-success"><?php  the_title(); ?></h4>
 							<p class="card-text mb-auto"><?php the_excerpt(); ?></p>
 							<a href="<?php echo get_permalink(); ?>" class="stretched-link">Continue reading</a>
 						</div>
 						<div class="col-auto d-none d-lg-block">
-							<div style="width: 100%;height: 100%;background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'cool_blog-featured-image'); ?>) no-repeat center top/cover;">
-              </div>
-							<!-- <?php echo get_the_post_thumbnail(get_the_ID(), 'cool_blog-tutorial-image');?> -->
+							<div style="width: 100%;height: 100%;min-height: 50px;background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'cool_blog-featured-image'); ?>) no-repeat center top/cover; ">
+							</div>
+							<?php echo get_the_post_thumbnail(get_the_ID(), 'cool_blog-tutorial-image');?>
 						</div>
 					</div>
+				</div>
 			</div>
 
 

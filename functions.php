@@ -85,11 +85,15 @@ function cool_blogWidgetsInit() {
     register_sidebar( array(
         'name' => __( 'Posts sidebar', 'cool_blog' ),
         'id' => 'sidebar-posts',
-        'description' => __( 'Widgets in this area will be shown on all posts.', 'cool_blog' ),
-        'before_widget' => '<div id="%1$s" class="widget mt-4  card shadow  %2$s">',
-	'before_title'  => '<h5 class="card-header">',
-	'after_title'   => '</h5><div class="mt-3 card-text">',
-  'after_widget'  => '</div></div>',
+
+				'description' => __( 'Widgets in this area will be shown on all posts.', 'cool_blog' ),
+
+				'before_widget' => '<div id="%1$s" class="widget mt-4  card shadow  %2$s">',
+
+				'before_title'  => '<h5 class="card-header mb-2">',
+				'after_title'   => '</h5>',
+
+				'after_widget'  => '</div>',
     ) );
 }
 
@@ -168,14 +172,15 @@ function bootstrap_comment( $comment, $args, $depth ) {
   $GLOBALS['comment'] = $comment;
   ?>
   <?php if ( $comment->comment_approved == '1' ): ?>
-  <li class="media">
+  <li class="media" id="comment-<?php comment_ID() ?>" >
     <div class="media-left">
-      <?php echo get_avatar( $comment ); ?>
+			<img class="mr-3 avatar" src="<?php echo get_avatar_url( $comment ); ?>" alt="Generic placeholder image">
+
     </div>
     <div class="media-body">
-      <h4 class="media-heading">
+      <h5 class="mt-0 mb-1">
         <?php comment_author_link() ?>
-      </h4>
+      </h5>
       <time>
         <a href="#comment-<?php comment_ID() ?>" pubdate>
           <?php comment_date() ?> at <?php comment_time() ?>
@@ -183,6 +188,7 @@ function bootstrap_comment( $comment, $args, $depth ) {
       </time>
       <?php comment_text() ?>
     </div>
+		</li>
   <?php endif;
 }
 
@@ -192,3 +198,9 @@ function bootstrap_comment( $comment, $args, $depth ) {
 // ======================================================
 // ======================================================
 // ======================================================
+
+
+?>
+
+
+<?php
