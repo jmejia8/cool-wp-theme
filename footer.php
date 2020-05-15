@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="page-footer font-small  bg-light pt-4">
+<footer class="footer page-footer font-small  bg-light pt-4 mt-5">
 
   <!-- Footer Links -->
   <div class="container text-center text-md-left">
@@ -37,20 +37,6 @@
              );
           ?>
 
-        <!-- <ul class="list-unstyled">
-          <li>
-            <a href="#!">Link 1</a>
-          </li>
-          <li>
-            <a href="#!">Link 2</a>
-          </li>
-          <li>
-            <a href="#!">Link 3</a>
-          </li>
-          <li>
-            <a href="#!">Link 4</a>
-          </li>
-        </ul> -->
 
       </div>
       <!-- Grid column -->
@@ -72,7 +58,6 @@
 
   <!-- Copyright -->
   <div class="mt-3 footer-copyright text-center text-white py-3 bg-secondary"> &copy; <?php echo Date('Y')." "; echo  bloginfo('name'); ?>
-    <!-- <a href="https://mdbootstrap.com/"> MDBootstrap.com</a> -->
   </div>
   <!-- Copyright -->
 
@@ -81,19 +66,7 @@
 <!-- Footer -->
 
 
-<!-- <footer class="footer mt-auto py-3">
-  <div class="container">
-    <div class="row">
 
-        <div class="col h-100 justify-content-center align-self-center">
-            <span class="text-muted"></span>
-        </div>
-        <div class="col">
-
-        </div>
-      </div>
-  </div>
-</footer> -->
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

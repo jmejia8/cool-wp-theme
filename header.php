@@ -12,33 +12,18 @@
   <link rel="stylesheet" href="<?php bloginfo('stylesheet_url')?>">
 
   <link rel="stylesheet" href="http://localhost/wordpress/wp-content/themes/cool-wp-theme/style.css">
-  <style>
-    .bd-placeholder-img {
-      font-size: 1.125rem;
-      text-anchor: middle;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
 
-    @media (min-width: 768px) {
-      .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-      }
-    }
-  </style>
 
   <?php
 		wp_head();
 	?>
 </head>
-<body>
+<body class="d-flex flex-column  h-100">
   <main role="main">
     <?php
     $args = array(
       'post_type' => 'cool_blog_slider',
-      'posts_per_page' => 3
+      'posts_per_page' => 10
     );
 
     $loop = new WP_Query( $args );
@@ -69,10 +54,10 @@
                 <div style="position: absolute;width: 100%;height: 100%;background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'cool_blog-featured-image'); ?>) no-repeat center top/cover fixed;">
                 </div>
                 <div class="container">
-                  <div class="carousel-caption text-left">
+                  <div class="carousel-caption text-shadow text-left">
                     <?php the_title( "<h1>", "</h1>" ); ?>
                     <?php the_excerpt(); ?>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Go for it!</a></p>
+                    <p><a class="btn btn-lg btn-primary" href="<?php echo get_permalink(); ?>" role="button">Go for it!</a></p>
                   </div>
                 </div>
               </div>
@@ -83,13 +68,7 @@
                 <div class="carousel-item active">
                   <div style="position: absolute;width: 100%;height: 100%;background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'cool_blog-featured-image'); ?>) no-repeat center top/cover fixed;">
                   </div>
-                  <!-- <div class="container">
-                    <div class="carousel-caption text-left">
-                      <?php the_title( "<h1>", "</h1>" ); ?>
-                      <p><?php the_excerpt(); ?></p>
-                      <p><a class="btn btn-lg btn-primary" href="#" role="button">Go for it!</a></p>
-                    </div>
-                  </div> -->
+
                 </div>
                 <?php
 
@@ -99,12 +78,12 @@
       <?php
       if (!is_single()) :
       ?>
-      <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <a class="carousel-control-prev " href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon text-shadow" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
       </a>
-      <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <a class="carousel-control-next " href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon text-shadow" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
       <?php
