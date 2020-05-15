@@ -30,7 +30,7 @@ get_header();
     							<h3 class="mb-3"><?php  the_title(); ?></h3>
                   <div class="mb-1 text-muted"><?php echo get_the_date(); ?></div>
     							<p class="card-text mb-auto"><?php the_excerpt(); ?></p>
-    							<a href="<?php echo get_permalink(); ?>" class="stretched-link">Continue reading</a>
+    							<a href="<?php echo get_permalink(); ?>" class="stretched-link"><?php echo __('Continue reading', 'cool_blog'); ?></a>
     						</div>
     						<div class="col-auto d-none d-lg-block">
     							<?php echo get_the_post_thumbnail(get_the_ID(), 'cool_blog-tutorial-image');?>
@@ -64,7 +64,7 @@ get_header();
     </div>
     <div class="card-body">
       <h5 class="card-title"><?php the_title(); ?></h5>
-      <a href="<?php echo get_permalink(); ?>" class="stretched-link">Read</a>
+      <a href="<?php echo get_permalink(); ?>" class="stretched-link"><?php echo __('Read', 'cool_blog'); ?></a>
     </div>
   </div>
   <?php

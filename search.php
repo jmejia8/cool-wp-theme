@@ -30,7 +30,7 @@ get_header();
 						<div class="col p-4 d-flex flex-column position-static">
 							<h4 class="mb-3 text-success"><?php  the_title(); ?></h4>
 							<p class="card-text mb-auto"><?php the_excerpt(); ?></p>
-							<a href="<?php echo get_permalink(); ?>" class="stretched-link">Continue reading</a>
+							<a href="<?php echo get_permalink(); ?>" class="stretched-link"><?php echo __('Continue reading', 'cool_blog'); ?></a>
 						</div>
 						<div class="col-auto d-none d-lg-block">
 							<div style="width: 100%;height: 100%;min-height: 50px;background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'cool_blog-featured-image'); ?>) no-repeat center top/cover; ">

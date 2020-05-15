@@ -75,7 +75,7 @@ function cool_blog_post_type() {
   	);
  }
 
- add_action( 'init', 'cool_blog_code_type' );
+ // add_action( 'init', 'cool_blog_code_type' );
 
 
  // Register sidebars

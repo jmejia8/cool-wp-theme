@@ -6,8 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title><?php is_front_page() ? bloginfo('description') : wp_title(''); ?> | <?php bloginfo('name'); ?></title>
 
-  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
-  <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css" crossorigin="anonymous"> -->
 
   <link rel="stylesheet" href="<?php bloginfo('stylesheet_url')?>">
 
@@ -139,7 +139,7 @@
         ?>
 
         <form class="form-inline my-2 my-md-0" action="<?php echo get_site_url(); ?>">
-          <input class="form-control" type="text" name="s" placeholder="Search" aria-label="Search">
+          <input class="form-control" type="text" name="s" placeholder="<?php echo __('Search', 'cool_blog'); ?>" aria-label="<?php echo __('Search', 'cool_blog'); ?>">
         </form>
       </div>
     </div>

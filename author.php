@@ -27,10 +27,10 @@ get_header();
           </div>
           <!-- END SIDEBAR USER TITLE -->
           <!-- SIDEBAR BUTTONS -->
-          <div class="profile-userbuttons">
+          <!-- <div class="profile-userbuttons">
             <button type="button" class="btn btn-success btn-sm mb-3">Follow</button>
             <button type="button" class="btn btn-danger btn-sm mb-3">Message</button>
-          </div>
+          </div> -->
           <!-- END SIDEBAR BUTTONS -->
           <!-- SIDEBAR MENU -->
           <div class=" ">
@@ -70,7 +70,7 @@ get_header();
 									<div class="col p-4 d-flex flex-column position-static">
 										<h5 class="mb-3"><?php  the_title(); ?></h5>
 										<p class="card-text mb-auto"><?php the_excerpt(); ?></p>
-										<a href="<?php echo get_permalink(); ?>" class="stretched-link">Continue reading</a>
+										<a href="<?php echo get_permalink(); ?>" class="stretched-link"><?php echo __('Continue reading', 'cool_blog'); ?></a>
 									</div>
 									<div class="col-auto d-none d-lg-block">
 										<div style="width: 100%;height: 100%;min-height: 50px;background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'cool_blog-featured-image'); ?>) no-repeat center top/cover; ">
@@ -94,7 +94,7 @@ get_header();
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">About me</h5>
+          <h5 class="modal-title" id="exampleModalLabel"><?php echo __('About me', 'cool_blog'); ?></h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -103,7 +103,7 @@ get_header();
           <?php the_author_meta('user_description'); ?>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo __('Close', 'cool_blog'); ?></button>
           <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
         </div>
       </div>

@@ -32,11 +32,11 @@ $the_query = new WP_Query( array( 'orderby' => 'comment_count', 'posts_per_page'
     <div class="col-md-6">
       <div class="row h-100 no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col  p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-success">Popular</strong>
+          <strong class="d-inline-block mb-2 text-success"><?php echo __('Popular', 'cool_blog'); ?></strong>
           <h3 class="mb-0"><?php  the_title(); ?></h3>
           <div class="mb-1 text-muted"><?php echo get_the_date(); ?></div>
           <p class="mb-auto"><?php  echo wp_strip_all_tags( get_the_excerpt(), true ); ?></p>
-          <a href="<?php echo get_permalink(); ?>" class="stretched-link">Continue reading</a>
+          <a href="<?php echo get_permalink(); ?>" class="stretched-link"><?php echo __('Continue reading', 'cool_blog'); ?></a>
         </div>
         <div class="col d-none d-lg-block">
           <div style="width: 100%;height: 100%;min-height: 50px;background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'cool_blog-featured-image'); ?>) no-repeat center top/cover; ">
@@ -65,16 +65,20 @@ $the_query = new WP_Query( array( 'orderby' => 'comment_count', 'posts_per_page'
   //==============================================================================
   ?>
 
+</div>
+
+
 
 
   <div class="jumbotron">
     <div class="container">
       <h1 class="display-3"><?php bloginfo('name'); ?></h1>
       <p> <?php bloginfo('description'); ?> </p>
-      <p><a class="btn btn-primary btn-lg" href="#" role="button">About &raquo;</a></p>
+      <!-- <p><a class="btn btn-primary btn-lg" href="#" role="button">About &raquo;</a></p> -->
     </div>
   </div>
 
+<div class="container">
   <div class="album py-5 ">
       <!-- <div class="container"> -->
 

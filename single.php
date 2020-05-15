@@ -20,7 +20,7 @@
             <h1 class="blog-post-title"><?php  the_title(); ?></h1>
             <p class="blog-post-meta">
 							<?php echo get_the_date(); ?>
-							by
+							<?php echo __('by', 'cool_blog'); ?>
 							<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' )); ?>">
 								<?php the_author(); ?>
 							</a>
@@ -146,7 +146,7 @@
 			</div>
 		  <div class="card-body">
 		    <h5 class="card-title"><?php the_title(); ?></h5>
-		    <a href="<?php echo get_permalink(); ?>" class="stretched-link">Read</a>
+		    <a href="<?php echo get_permalink(); ?>" class="stretched-link"><?php echo __('Read', 'cool_blog'); ?></a>
 		  </div>
 		</div>
 		<?php

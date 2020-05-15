@@ -16,7 +16,7 @@ get_header(); ?>
 
 <center>
 </center>
-<h1>Latest Content</h1>
+<h1><?php echo __('Latest Content', 'cool_blog'); ?></h1>
 
 
 <?php
@@ -31,18 +31,18 @@ $loop = new WP_Query( $args );
 	           $loop->the_post();
 ?>
 
-<div class="">
-	<div class="card mb-4 shadow-sm">
-		<?php echo get_the_post_thumbnail($loop->ID, 'cool_blog-tutorial-image');?>
-		<div class="card-body">
-			<h4><?php the_title(); ?></h4>
-			<p class="card-text"><?php the_excerpt(); ?></p>
-			<div class="d-flex justify-content-between align-items-center">
-				<div class="btn-group">
-					<button type="button" onclick="location.href='<?php echo get_permalink(); ?>';" class="btn btn-sm btn-outline-secondary">View</button>
-					<!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
+<div class="row mt-3">
+	<div >
+		<div class="row no-gutters  shadow rounded overflow-hidden flex-md-row mb-4 border-primary h-md-250 position-relative">
+			<div class="col p-4 d-flex flex-column position-static">
+				<h4 class="mb-3 text-success"><?php  the_title(); ?></h4>
+				<p class="card-text mb-auto"><?php the_excerpt(); ?></p>
+				<a href="<?php echo get_permalink(); ?>" class="stretched-link"><?php echo __('Continue reading', 'cool_blog'); ?></a>
+			</div>
+			<div class="col-auto d-none d-lg-block">
+				<div style="width: 100%;height: 100%;min-height: 50px;background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'cool_blog-featured-image'); ?>) no-repeat center top/cover; ">
 				</div>
-				<small class="text-muted">9 mins</small>
+				<?php echo get_the_post_thumbnail(get_the_ID(), 'cool_blog-tutorial-image');?>
 			</div>
 		</div>
 	</div>
