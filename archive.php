@@ -18,24 +18,21 @@ get_header();
 
       		<?php while ( have_posts() ) : the_post(); ?>
 
-      			<div class="row mb-5">
-    					<div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-    						<div class="col p-4 d-flex flex-column position-static">
-                  <strong class="d-inline-block mb-2 text-primary">
-                    <?php
-                      if (is_category()) {  single_cat_title();  }
-                      if (is_tag()) { single_tag_title(); }
-                    ?>
-                  </strong>
-    							<h3 class="mb-3"><?php  the_title(); ?></h3>
-                  <div class="mb-1 text-muted"><?php echo get_the_date(); ?></div>
-    							<p class="card-text mb-auto"><?php the_excerpt(); ?></p>
-    							<a href="<?php echo get_permalink(); ?>" class="stretched-link"><?php echo __('Continue reading', 'cool_blog'); ?></a>
-    						</div>
-    						<div class="col-auto d-none d-lg-block">
-    							<?php echo get_the_post_thumbnail(get_the_ID(), 'cool_blog-tutorial-image');?>
-    						</div>
-    					</div>
+            <div class="row mt-3">
+      				<div >
+      					<div class="row no-gutters  shadow rounded overflow-hidden flex-md-row mb-4 border-primary h-md-250 position-relative">
+      						<div class="col p-4 d-flex flex-column position-static">
+      							<h4 class="mb-3 text-success"><?php  the_title(); ?></h4>
+      							<p class="card-text mb-auto"><?php the_excerpt(); ?></p>
+      							<a href="<?php echo get_permalink(); ?>" class="stretched-link"><?php echo __('Continue reading', 'cool_blog'); ?></a>
+      						</div>
+      						<div class="col-auto d-none d-lg-block">
+      							<div style="width: 100%;height: 100%;min-height: 50px;background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'cool_blog-featured-image'); ?>) no-repeat center top/cover; ">
+      							</div>
+      							<?php echo get_the_post_thumbnail(get_the_ID(), 'cool_blog-tutorial-image');?>
+      						</div>
+      					</div>
+      				</div>
       			</div>
 
 
