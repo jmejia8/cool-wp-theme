@@ -4,6 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+	<link rel="apple-touch-icon" sizes="76x76" href="<?php bloginfo('template_url');?>/img/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="<?php bloginfo('template_url');?>/img/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('template_url');?>/img/favicon-16x16.png">
+	<link rel="manifest" href="<?php bloginfo('template_url');?>/img/site.webmanifest">
+	<link rel="mask-icon" href="<?php bloginfo('template_url');?>/img/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+
+
   <title><?php is_front_page() ? bloginfo('description') : wp_title(''); ?> | <?php bloginfo('name'); ?></title>
 
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
@@ -11,14 +22,14 @@
 
   <link rel="stylesheet" href="<?php bloginfo('stylesheet_url')?>">
 
-  <link rel="stylesheet" href="http://localhost/wordpress/wp-content/themes/cool-wp-theme/style.css">
+  <link rel="stylesheet" href="<?php bloginfo('template_url');?>/style.css">
 
 
   <?php
 		wp_head();
 	?>
 </head>
-<body class="d-flex flex-column  h-100">
+<body <?php body_class(); ?>>
   <main role="main">
     <?php
     $args = array(

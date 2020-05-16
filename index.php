@@ -29,7 +29,7 @@ $the_query = new WP_Query( array( 'orderby' => 'comment_count', 'posts_per_page'
       }
 
     ?>
-    <div class="col-md-6">
+    <div class="col-md-6 mb-4">
       <div class="row h-100 no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
         <div class="col  p-4 d-flex flex-column position-static">
           <strong class="d-inline-block mb-2 text-success"><?php echo __('Popular', 'cool_blog'); ?></strong>
@@ -87,7 +87,7 @@ $the_query = new WP_Query( array( 'orderby' => 'comment_count', 'posts_per_page'
           // start loop
           while (have_posts()) : the_post();
           ?>
-          <div class="col-md-4  post-card  mb-4">
+          <div class="col-lg-4 col-md-6 col-md-12  post-card  mb-4">
             <div class="h-100 shadow card mb-4  border-secundary shadow-sm">
               <div class="mh-50">
                 <div style=";width: 100%;height: 100%;min-height: 200px;background: url(<?php echo get_the_post_thumbnail_url(get_the_ID(),'cool_blog-featured-image'); ?>) no-repeat center top/cover; ">
